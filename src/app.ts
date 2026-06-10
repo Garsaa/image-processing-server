@@ -12,9 +12,15 @@ app.use(cors());
 app.use(morgan(env.NODE_ENV === "production" ? "combined" : "dev"));
 app.use("/uploads", express.static(path.resolve(env.UPLOAD_DIR)));
 
+app.get("/", (_request, response) => {
+  response.json({ status: "ok", service: "image-processing-server" });
+});
+
 app.get("/health", (_request, response) => {
   response.json({ status: "ok" });
 });
 
 app.use("/captures", capturesRouter);
 app.use(errorHandler);
+
+export default app;

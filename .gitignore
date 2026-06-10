@@ -4,3 +4,4 @@ uploads/
 data/
 .env
 .DS_Store
+.vercel

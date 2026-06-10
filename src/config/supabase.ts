@@ -1,4 +1,5 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import WebSocket from "ws";
 import { env } from "./env.js";
 
 let supabaseClient: SupabaseClient | null = null;
@@ -20,6 +21,9 @@ export function getSupabaseClient(): SupabaseClient {
     auth: {
       persistSession: false,
       autoRefreshToken: false
+    },
+    realtime: {
+      transport: WebSocket as unknown as typeof globalThis.WebSocket
     }
   });
 
