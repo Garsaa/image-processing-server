@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "API para receber capturas da ESP32-CAM, detectar mudancas entre imagens e enviar alertas.",
   "main": "dist/server.js",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "tsx watch src/server.ts",
@@ -20,7 +23,6 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "firebase-admin": "^14.0.0",
     "morgan": "^1.10.0",
     "nodemailer": "^8.0.10",
     "sharp": "^0.33.5",
@@ -34,8 +36,5 @@
     "@types/nodemailer": "^6.4.17",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
-  },
-  "overrides": {
-    "uuid": "11.1.1"
   }
 }
